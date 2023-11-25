@@ -4,8 +4,8 @@ import openai
 import io
 import os
 from PIL import Image
-
-from dbgeneric import get_index_for_pdf
+import dbgeneric
+#from dbgeneric import get_index_for_pdf
 
 
 
