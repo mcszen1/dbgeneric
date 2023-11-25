@@ -83,33 +83,31 @@ def get_index_for_pdf(pdf_files, openai_api_key):
         documents = documents + text_to_docs(text)  # Divide the text up into chunks
 
     index = docs_to_index(documents, openai_api_key)
-
-    return index
+    serial = faiss.serialize_index(index)
+    return serial
 
 
 
 #
-# Function to store (persist) the Faiss DB in Databutton
+# Function to store (persist) the Faiss 
 #
 def store_index_in_db(index, name):
     faiss.write_index(index.index, "docs.index")
-    # Open the file and dump to Databutton storage
-    with open("docs.index", "rb") as file:
-        db.storage.binary.put(f"{name}.index", file.read())
+    # Open the file and dump 
+    with open('index.pkl', "wb") as file:
+        
+       
+        pickle.dump(docs.index,file))
         index.index = None
-        db.storage.binary.put(f"{name}.pkl", pickle.dumps(index))
 
 
 #
 # Function to load the Faiss DB 
 #
 def load_index_from_db(index_name):
-    findex = db.storage.binary.get(f"{index_name}.index")
 
-    with open("docs.index", "wb") as file:
-        file.write(findex)
-    index = faiss.read_index("docs.index")
-    VectorDB = pickle.loads(db.storage.binary.get(f"{index_name}.pkl"))
+ 
+    VectorDB = pickle.loads(index.pkl)
     VectorDB.index = index
 
     return VectorDB
