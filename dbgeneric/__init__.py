@@ -1,2 +1,2 @@
-from .modulo import get_index_for_pdf
+from dbgeneric import get_index_for_pdf
 
