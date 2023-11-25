@@ -97,7 +97,7 @@ def store_index_in_db(index, name):
     with open('index.pkl', "wb") as file:
         
        
-        pickle.dump(docs.index,file))
+        pickle.dump(docs.index,file)
         index.index = None
 
 
