@@ -55,7 +55,7 @@ openai.api_key = key
 @st.cache_data
 def create_vectordb(files):
     with st.spinner("Creating your vectordb"):
-        vectordb = get_index_for_pdf(files, key)
+        vectordb = dbgeneric.get_index_for_pdf(files, key)
     st.success("Vectordb criado. Seu Chat está pronto!")
     return vectordb
 
