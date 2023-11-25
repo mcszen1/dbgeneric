@@ -4,3 +4,5 @@ langchain
 typing
 pypdf
 tiktoken
+faiss-cpu
+faiss-gpu
