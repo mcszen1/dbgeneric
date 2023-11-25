@@ -144,7 +144,7 @@ if question:
     for chunk in client.chat.completions.create(
         model="gpt-3.5-turbo-16k", messages=prompt, stream=True
     ):
-        text = chunk.completions.choices[0].get("delta", {}).get("content")
+        text = chunk.choices[0].get("delta", {}).get("content")
         if text is not None:
             response.append(text)
             result = "".join(response).strip()
