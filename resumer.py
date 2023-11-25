@@ -46,7 +46,7 @@ os.environ['OPENAI_API_KEY'] = key
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 #db.secrets.put("OPENAI_API_KEY", key)
 #openai.api_key = db.secrets.get("OPENAI_API_KEY")
-openai.api_key = key
+#openai.api_key = key
 #Para lidar com a chave em outro ambiente fora o Databutton
 #os.environ['OPENAI_API_KEY'] = openai_api_key 
 #openai.api_key = os.getenv("OPENAI_API_KEY")
