@@ -141,13 +141,19 @@ if question:
     response = []
     #client=OpenAI()
     result = ""
+    response = []  # Certifique-se de que a lista 'response' esteja definida antes do loop
+    
     for chunk in client.chat.completions.create(
         model="gpt-3.5-turbo-16k", messages=prompt, stream=True
     ):
-        text = chunk.choices[0].get("delta", {}).get("content")
-        if text is not None:
-            response.append(text)
-            result = "".join(response).strip()
+        if 'choices' in chunk and len(chunk['choices']) > 0:
+            delta = chunk['choices'][0].get('delta', {})
+            text = delta.get('content')
+            if text is not None:
+                response.append(text)
+                result = "".join(response).strip()
+
+
 
             # Let us update the Bot's answer with the new chunk
             botmsg.write(result)
