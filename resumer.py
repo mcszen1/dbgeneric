@@ -5,6 +5,7 @@ import io
 import os
 from PIL import Image
 import dbgeneric
+from dbgeneric import dbfaiss
 
 
 from openai import OpenAI
