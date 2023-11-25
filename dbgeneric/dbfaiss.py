@@ -83,7 +83,8 @@ def get_index_for_pdf(pdf_files, openai_api_key):
         documents = documents + text_to_docs(text)  # Divide the text up into chunks
 
     index = docs_to_index(documents, openai_api_key)
-    return index
+    serial=pickle.dumps(index)
+    return serial
 
 
 
