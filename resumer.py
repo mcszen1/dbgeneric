@@ -157,7 +157,7 @@ if question:
 
             # Let us update the Bot's answer with the new chunk
             botmsg.write(result)
-            st.write(result)
+    st.write(result)
     # When we get an answer back we add that to the message history
     prompt.append({"role": "assistant", "content": result})
 
