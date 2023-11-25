@@ -52,7 +52,7 @@ openai.api_key = key
 #openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # This function feeds PDFs into a vectordb.
-@st.cache_data
+@st.cache_resource
 def create_vectordb(files):
     with st.spinner("Creating your vectordb"):
         vectordb = get_index_for_pdf(files, key)
