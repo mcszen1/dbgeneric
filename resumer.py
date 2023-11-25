@@ -7,8 +7,7 @@ from PIL import Image
 import dbgeneric
 #from dbgeneric import get_index_for_pdf
 
-
-
+from openai import OpenAI
 
 
 # Display image using streamlit
@@ -42,6 +41,9 @@ st.info(
 #openai.api_key = db.secrets.get("OPENAI_API_KEY")
 #db.secrets.put("OPENAI_API_KEY", "")
 key= st.text_input('Entre com sua chave:', type='password')
+os.environ['OPENAI_API_KEY'] = key
+# Initialize the OpenAI client with your API key
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 #db.secrets.put("OPENAI_API_KEY", key)
 #openai.api_key = db.secrets.get("OPENAI_API_KEY")
 openai.api_key = key
