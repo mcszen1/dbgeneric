@@ -1,6 +1,5 @@
 import streamlit as st
-import faiss-cpu
-import faiss-gpu
+
 import re
 import time
 from io import BytesIO
