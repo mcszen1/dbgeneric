@@ -1,6 +1,6 @@
 
 import streamlit as st
-import openai
+
 import io
 import os
 from PIL import Image
@@ -139,8 +139,9 @@ if question:
 
     # Here we call ChatGPT with streaming
     response = []
+    client=OpenaAI()
     result = ""
-    for chunk in openai.ChatCompletion.create(
+    for chunk in client.chat.completions.create(
         model="gpt-3.5-turbo-16k", messages=prompt, stream=True
     ):
         text = chunk.choices[0].get("delta", {}).get("content")
