@@ -139,7 +139,7 @@ if question:
 
     # Here we call ChatGPT with streaming
     response = []
-    client=OpenAI()
+    #client=OpenAI()
     result = ""
     for chunk in client.chat.completions.create(
         model="gpt-3.5-turbo-16k", messages=prompt, stream=True
