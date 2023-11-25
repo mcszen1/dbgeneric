@@ -41,7 +41,7 @@ st.info(
 #Para recuperar uma chave inserida na configuração do APP use como abaixo"
 #openai.api_key = db.secrets.get("OPENAI_API_KEY")
 #db.secrets.put("OPENAI_API_KEY", "")
-key= st.text_input('Entre com sua chave da OPENAI', type='password')
+key= st.text_input('Entre com sua chave:', type='password')
 #db.secrets.put("OPENAI_API_KEY", key)
 #openai.api_key = db.secrets.get("OPENAI_API_KEY")
 openai.api_key = key
