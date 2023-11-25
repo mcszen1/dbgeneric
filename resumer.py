@@ -5,7 +5,7 @@ import io
 import os
 from PIL import Image
 import dbgeneric
-from dbgeneric import get_index_for_pdf
+#from dbgeneric import get_index_for_pdf
 
 
 
