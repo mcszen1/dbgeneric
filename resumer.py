@@ -12,7 +12,7 @@ from PIL import Image
 
 
 # Display image using streamlit
-st.image(labcom_logo_preto.jpg, use_column_width='auto')
+st.image("labcom_logo_preto.jpg", use_column_width='auto')
 
 st.title("RESUMER - Converse com os seus PDFs")
 
