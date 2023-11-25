@@ -57,7 +57,8 @@ def create_vectordb(files):
     with st.spinner("Creating your vectordb"):
         vectordb = get_index_for_pdf(files, key)
     st.success("Vectordb criado. Seu Chat está pronto!")
-    return vectordb
+    serial=pickle.dumps(vectordb)
+    return serial
 
 
 # Let the user upload pdf files
@@ -76,8 +77,7 @@ if pdf_files:
     )
 
 
-#if button:
-    #st.session_state["vectordb"] = create_vectordb([db.storage.binary.get("example-pdf")])
+
 
 
 prompt_template = """
