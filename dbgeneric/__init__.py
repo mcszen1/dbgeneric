@@ -1,2 +1,2 @@
-from dbgeneric import get_index_for_pdf
+from modulo.py import get_index_for_pdf
 
