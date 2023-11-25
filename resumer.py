@@ -30,7 +30,7 @@ com a aplicação sobre ele.
 st.info(
     """
 **Para usar é simples:**
-1. Você precisa ter uma chave da API da OPEN AI.
+1. Você precisa ter uma chave da API que vai usar.
 2. Insira a chave e dê ENTER no campo abaixo, antes de operar com o seu documento.
 3. Depois de inserir a chave, você faz o upload dos documentos que deseja usar.
 4. Feito isso você pode começar a fazer suas solicitações e conversar.
