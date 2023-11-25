@@ -1,6 +1,5 @@
 git+https://github.com/mcszen1/dbgeneric.git
 openai
-faiss
 langchain
 pickle
 typing
